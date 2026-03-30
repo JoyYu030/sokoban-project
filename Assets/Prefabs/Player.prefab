@@ -409,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3301981105375451235}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.51586175, z: 0, w: 0.85667187}
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -478,9 +478,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   speed: 5
   lerpSnapDist: 0.1
+  targetPos: {x: 0, y: 0, z: 0}
   canMove: 1
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
+  state: 0
   myAnim: {fileID: 4400037649519715519}
 --- !u!95 &4400037649519715519
 Animator:
@@ -516,7 +518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc54180f852a4c6998dc559bef41b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stuckObj: []
 --- !u!1 &8546947721377108135
 GameObject:
   m_ObjectHideFlags: 0

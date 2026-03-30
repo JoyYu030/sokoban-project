@@ -70,11 +70,13 @@ public class Sticky : Block
     /// </summary>
     private void CheckAdjacent()
     {
+        
         if (LeadBlock == null)
         {
             for (int i = 0; i < touchDirs.Length; i++)
             {
                 Cell checkCell = gridManager.gridList[gridPos.x + touchDirs[i].x][gridPos.y + touchDirs[i].y].GetComponent<Cell>();
+                // LeadBlock = checkCell.ContainObj.GetComponent<Block>();
                 if (checkCell.ContainObj != null && checkCell.ContainObj.GetComponent<Block>().canMove)
                 {
                     leadDirIndex = i;

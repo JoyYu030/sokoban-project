@@ -52,6 +52,7 @@ public class Block : MonoBehaviour
     /// </summary>
     public virtual bool CheckMove(int _deltaX, int _deltaY)
     {
+       
         if (State == MoveStates.idle)
         {
             State = MoveStates.attemptingMove;
