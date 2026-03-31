@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+[RequireComponent(typeof(AudioSource))]
 
 public class Block : MonoBehaviour
 {

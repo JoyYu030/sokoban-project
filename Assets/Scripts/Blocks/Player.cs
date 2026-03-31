@@ -1,4 +1,5 @@
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : Block
@@ -6,16 +7,30 @@ public class Player : Block
 
     [SerializeField]
     private Animator myAnim;
-    void start()
-    {
+    [SerializeField] private AudioSource walkAudioSource;
+    //[SerializeField] private AudioSource pushAudioSource;
+    // void start()
+    // {
 
-    }
+    // }
+
     private void Update()
     {
 
         if (State == MoveStates.idle) MoveInput();
+        SoundCheck();
     }
 
+    void SoundCheck()
+    {
+        if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.S))
+        {
+            if(!walkAudioSource.isPlaying)
+                walkAudioSource.Play();
+        } 
+        else
+           walkAudioSource.Stop();
+    }
     private void MoveInput()
     {
 
@@ -30,6 +45,7 @@ public class Player : Block
 
         if (Input.GetKey(KeyCode.A))
         {
+            
             if (Mathf.Abs(forward.x) > Mathf.Abs(forward.z))
                 deltaY = forward.x > 0f ? -1 : 1;
             else
@@ -62,6 +78,7 @@ public class Player : Block
         }
 
         CheckMove(deltaX, deltaY);
+        
         // Vector3 dir = Vector3.zero;
 
         // if (Input.GetKey(KeyCode.W))

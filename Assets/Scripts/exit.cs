@@ -13,4 +13,9 @@ public class exit : MonoBehaviour
             SceneManager.LoadScene(sceneName);
         }
     }
+
+    public void ToLevelOne()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 }
